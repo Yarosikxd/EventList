@@ -1,0 +1,55 @@
+﻿@using DomainEventsList.Models
+@model IEnumerable<Evant>
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create New Event</h1>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Title">Title:</label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description">Description:</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Start">Start:</label>
+        <input asp-for="Start" type="datetime-local" class="form-control" />
+        <span asp-validation-for="Start" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Finished">Finished:</label>
+        <input asp-for="Finished" type="datetime-local" class="form-control" />
+        <span asp-validation-for="Finished" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Price">Price:</label>
+        <input asp-for="Price" type="number" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Comment">Comment:</label>
+        <textarea asp-for="Comment" class="form-control"></textarea>
+        <span asp-validation-for="Comment" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="UserId">User ID:</label>
+        <input asp-for="UserId" type="text" class="form-control" />
+        <span asp-validation-for="UserId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+

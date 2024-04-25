@@ -1,0 +1,39 @@
+﻿@using DomainEventsList.Models
+@model IEnumerable<Evant>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<html>
+<head>
+    <title>Event Details</title>
+</head>
+<body>
+    <h1>Event Details</h1>
+    <ul>
+        @foreach (var evant in Model)
+        {
+            <li><strong>ID:</strong> @evant.Id</li>
+            <li><strong>Title:</strong> @evant.Title</li>
+            <li><strong>Description:</strong> @evant.Description</li>
+            <li><strong>Start:</strong> @evant.Start.ToString("yyyy-MM-dd HH:mm:ss")</li>
+            <li><strong>Finished:</strong> @evant.Finished.ToString("yyyy-MM-dd HH:mm:ss")</li>
+            <li><strong>Price:</strong> @evant.Price</li>
+            <li><strong>Comment:</strong> @evant.Comment</li>
+            <li><strong>User ID:</strong> @evant.UserId</li>
+        }
+    </ul>
+
+    <h2>Users</h2>
+    <ul>
+        @foreach (var evant in Model)
+        {
+            foreach (var user in evant.Users)
+            {
+                <li>@user.FullName - @user.Email</li>
+            }
+        }
+    </ul>
+</body>
+</html>
